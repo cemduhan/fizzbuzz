@@ -13,7 +13,9 @@ function fizzbuzz(number){
     }
     for (let x=1 ; x<=number ; x+=1) {
         let appends = ''
-        if(x % 3 === 0){
+        if(x % 15 === 0){
+            appends = 'fizzbuzz'
+        }else if(x % 3 === 0){
             appends = 'fizz'
         }else if(x % 5 === 0){
             appends = 'buzz'
