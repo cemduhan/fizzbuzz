@@ -6,4 +6,8 @@ describe('fizbuzz', () =>{
         expect(fizzbuzz(0)).toEqual(['-1'])
     });
 
+    it('fizzbuzz with 1', () => {
+        expect(fizzbuzz(1)).toEqual(['1'])
+    });  
+
 });
