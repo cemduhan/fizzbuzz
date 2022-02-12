@@ -15,6 +15,8 @@ function fizzbuzz(number){
         let appends = ''
         if(x % 3 === 0){
             appends = 'fizz'
+        }else if(x % 5 === 0){
+            appends = 'buzz'
         }else{
             appends = x.toString()
         }
