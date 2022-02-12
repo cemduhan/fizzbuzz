@@ -4,11 +4,11 @@
 * @returns {String|Array} Sum of a and b or an array that contains a, b and the sum of a and b.
 */
 function fizzbuzz(number){
-    var arr = []    
-    if(number <= 0){
+    var arr = []        
+    if(typeof(number) != typeof(0)){
         return ['-1']
     }
-    if(typeof(number) != typeof(0)){
+    if(number <= 0){
         return ['-1']
     }
     for (let x=1 ; x<=number ; x+=1) {

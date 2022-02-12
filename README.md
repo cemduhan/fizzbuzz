@@ -1,2 +1,186 @@
-# fizzbuzz
-tdd for fizz buzz on js
+# TDD Approach For FizzBuzz
+
+## **First Step - Write Test**
+Create a basic test that should fail in this case testing with 0 and expecting ['-1']
+
+*git checkout 152dea476c9a320da4dd7ef322222289762c5830*
+
+```javaScript
+describe('fizbuzz', () =>{
+    it('fizzbuzz with 0', () => {
+        expect(fizzbuzz(0)).toEqual(['-1'])
+    });
+});
+```
+![First Test Fails](./assets/firstTestFail.png)
+
+It should fail since there is not a fizzbuzz function anywhere on the project
+
+## **Second Step -  Refactor the code to pass the test**
+Refactor fuction to make it pass the test 
+
+*git checkout 2fe60f16d0c7cb8c78673697c50af8b56c60427b*
+
+```javaScript
+function fizzbuzz(number){
+    return ['-1']    
+}
+export default fizzbuzz
+```
+
+![First Test Passes](./assets/firstTestPass.png)
+
+Test passes with refactored code imported on *.test.js
+
+---
+## **Then - Add another test that fails**
+Test with a valid number so returning ['-1'] is not enough
+
+*git checkout 81c7bf802d31eac8a4846131faf587a42569471e*
+
+```javaScript
+it('fizzbuzz with 1', () => {
+    expect(fizzbuzz(1)).toEqual(['1'])
+});  
+```
+### **Refactor the code to pass the test**
+*git checkout 1acc633d467a26a426e9942aa32736dbe62849cf*
+
+```javaScript
+function fizzbuzz(number){
+if(number <= 0){
+    return ['-1']
+}
+
+return [number.toString()]
+}
+```
+---
+### **Repeat adding tests**
+Test with a text so returning ['1'] or checking if number is less then 0 not enough
+
+*git checkout 6ca5a764406018dbf3018a6423145160b768e21f*
+
+```javaScript
+it('fizzbuzz with text', () => {
+    expect(fizzbuzz('text')).toEqual(['-1'])
+});  
+```
+
+#### **Refactor the code to pass the test**
+*git checkout ec19ab14f9d51f429d89dc403300fb6c52cf08de*
+
+```javaScript
+function fizzbuzz(number){
+    ...   
+    if(typeof(number) != typeof(0)){
+        return ['-1']
+    }
+
+    if(number <= 0){
+        return ['-1']
+    }
+    ...
+}
+```
+
+---
+### **Add more tests**
+Test with a bigger number so simply returning ['1'] is not enough
+
+*git checkout 56cbb890cfc82aa67f4d2435fdf2617262cc9f4c*
+
+```javaScript
+it('fizzbuzz with 3', () => {
+    expect(fizzbuzz(3)).toEqual(['1','2','fizz'])
+});  
+```
+
+#### **Refactor the code to pass the test**
+*git checkout edd11d6b5c99c70bc84403c01d45786d0978c856*
+
+```javaScript
+function fizzbuzz(number){
+    ...
+    for (let x=1 ; x<=number ; x+=1) {
+        let appends = ''
+        if(x % 3 === 0){
+            appends = 'fizz'
+        }else{
+            appends = x.toString()
+        }
+        arr.push(appends)
+    }
+    return arr
+}
+```
+---
+### **More tests**
+Test with another condition
+
+*git checkout ee46b8f4be5ca57b76b08b0673530fefbfe83596*
+
+```javaScript
+it('fizzbuzz with 5', () => {
+    expect(fizzbuzz(5)).toEqual(['1','2','fizz','4','buzz'])
+});  
+```
+
+#### **Refactor the code to pass the test**
+*git checkout b8ada3f723c21f2e5667b129b5fede969de36bb4*
+
+```javaScript
+function fizzbuzz(number){
+    ...
+    for (let x=1 ; x<=number ; x+=1) {
+        let appends = ''
+        if(x % 3 === 0){
+            appends = 'fizz'
+        }else if(x % 5 === 0){
+            appends = 'buzz'
+        }else{
+            appends = x.toString()
+        }
+        arr.push(appends)
+    }
+    return arr
+}
+```
+---
+### **More tests**
+Test with another condition to make it fail
+
+*git checkout 91361e84121c65b6b620c844c2480f7a1c96cab4*
+
+```javaScript
+it('fizzbuzz with 15', () => {
+    expect(fizzbuzz(15)).toEqual(['1','2','fizz','4','buzz','fizz','7','8','fizz','buzz','11','fizz','13','14','fizzbuzz'])
+});  
+```
+
+#### **Refactor the code to pass the test**
+*git checkout 3299418941a1e7738cb865d13d5f2bdba19d21b3*
+
+```javaScript
+function fizzbuzz(number){
+    ...
+    for (let x=1 ; x<=number ; x+=1) {
+        let appends = ''
+        if(x % 15 === 0){
+            appends = 'fizzbuzz'
+        }else if(x % 3 === 0){
+            appends = 'fizz'
+        }else if(x % 5 === 0){
+            appends = 'buzz'
+        }else{
+            appends = x.toString()
+        }
+        arr.push(appends)
+    }
+    return arr
+}
+```
+---
+![All tests passed](./assets/allTests.png)
+
+# **Add more tests that fails then refactor the code even more to pass the tests**
