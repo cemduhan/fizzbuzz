@@ -18,4 +18,8 @@ describe('fizbuzz', () =>{
         expect(fizzbuzz(3)).toEqual(['1','2','fizz'])
     });
 
+    it('fizzbuzz with 5', () => {
+        expect(fizzbuzz(5)).toEqual(['1','2','fizz','4','buzz'])
+    });
+
 });
