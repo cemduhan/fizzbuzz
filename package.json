@@ -1,0 +1,40 @@
+{
+  "name": "tdd_fizzbuzz",
+  "version": "1.0.0",
+  "description": "TDD for FizzBuzz",
+  "scripts": {
+    "lint": "npx eslint --config .eslintrc.json 'src/**/*.js' --max-warnings 0",
+    "test": "jest",
+    "test:ci": "jest",
+    "precommit": "npm run lint && npm run test:ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cemduhan/fizzbuzz.git"
+  },
+  "keywords": [
+    "tdd",
+    "fizzbuzz",
+    "js"
+  ],
+  "author": "Cem Karagoz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cemduhan/fizzbuzz/issues"
+  },
+  "homepage": "https://github.com/cemduhan/fizzbuzz#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.9.0",
+    "eslint-plugin-jest": "^26.1.0",
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>src/fizzbuzz.js"
+    ]
+  }
+}
