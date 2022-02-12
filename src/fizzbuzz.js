@@ -4,7 +4,11 @@
 * @returns {String|Array} Sum of a and b or an array that contains a, b and the sum of a and b.
 */
 function fizzbuzz(number){
-    return ['-1']
+    if(number <= 0){
+        return ['-1']
+    }
+
+    return [number.toString()]
 }
 
 export default fizzbuzz
