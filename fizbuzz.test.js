@@ -22,4 +22,7 @@ describe('fizbuzz', () =>{
         expect(fizzbuzz(5)).toEqual(['1','2','fizz','4','buzz'])
     });
 
+    it('fizzbuzz with 15', () => {
+        expect(fizzbuzz(15)).toEqual(['1','2','fizz','4','buzz','fizz','7','8','fizz','buzz','11','fizz','13','14','fizzbuzz'])
+    });
 });
