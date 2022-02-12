@@ -3,7 +3,7 @@
 ## **First Step - Write Test**
 Create a basic test that should fail in this case testing with 0 and expecting ['-1']
 
-*git checkout 152dea476c9a320da4dd7ef322222289762c5830*
+*git checkout firstTestFail*
 
 ```javaScript
 describe('fizbuzz', () =>{
@@ -19,7 +19,7 @@ It should fail since there is not a fizzbuzz function anywhere on the project
 ## **Second Step -  Refactor the code to pass the test**
 Just returning ['-1'] will pass all the tests so just do it without over engineering 
 
-*git checkout 2fe60f16d0c7cb8c78673697c50af8b56c60427b*
+*git checkout firstTestPass*
 
 ```javaScript
 function fizzbuzz(number){
@@ -36,7 +36,7 @@ Test passes with refactored code imported on *.test.js
 ## **Then - Add another test that fails**
 Test with a valid number so returning ['-1'] is not enough
 
-*git checkout 81c7bf802d31eac8a4846131faf587a42569471e*
+*git checkout secondTestFail*
 
 ```javaScript
 it('fizzbuzz with 1', () => {
@@ -46,7 +46,7 @@ it('fizzbuzz with 1', () => {
 ### **Refactor the code to pass the test**
 Just returning ['-1'] is not enough so add a check the just return the number to pass the test
 
-*git checkout 1acc633d467a26a426e9942aa32736dbe62849cf*
+*git checkout secondTestPass*
 
 ```javaScript
 function fizzbuzz(number){
@@ -61,7 +61,7 @@ return [number.toString()]
 ### **Repeat adding tests**
 Test with a text so returning ['1'] or checking if number is less then 0 not enough
 
-*git checkout 6ca5a764406018dbf3018a6423145160b768e21f*
+*git checkout thirdTestFail*
 
 ```javaScript
 it('fizzbuzz with text', () => {
@@ -72,7 +72,7 @@ it('fizzbuzz with text', () => {
 #### **Refactor the code to pass the test**
 Have to check type of the input so we can return ['-1'] to indicate failed input and pass the tests
 
-*git checkout ec19ab14f9d51f429d89dc403300fb6c52cf08de*
+*git checkout thirdTestPass*
 
 ```javaScript
 function fizzbuzz(number){
@@ -92,7 +92,7 @@ function fizzbuzz(number){
 ### **Add more tests**
 Test with a bigger number so simply returning ['1'] is not enough
 
-*git checkout 56cbb890cfc82aa67f4d2435fdf2617262cc9f4c*
+*git checkout fourthTestFail*
 
 ```javaScript
 it('fizzbuzz with 3', () => {
@@ -103,7 +103,7 @@ it('fizzbuzz with 3', () => {
 #### **Refactor the code to pass the test**
 Now just returning a single value is not enough and we have to add fizz if number is divisible by 3
 
-*git checkout edd11d6b5c99c70bc84403c01d45786d0978c856*
+*git checkout fourthTestPass*
 
 ```javaScript
 function fizzbuzz(number){
@@ -124,7 +124,7 @@ function fizzbuzz(number){
 ### **More tests**
 Test with another condition
 
-*git checkout ee46b8f4be5ca57b76b08b0673530fefbfe83596*
+*git checkout fifthTestFail*
 
 ```javaScript
 it('fizzbuzz with 5', () => {
@@ -135,7 +135,7 @@ it('fizzbuzz with 5', () => {
 #### **Refactor the code to pass the test**
 Now we have to check if number is divisible by 5 to add buzz to the list instead of 5
 
-*git checkout b8ada3f723c21f2e5667b129b5fede969de36bb4*
+*git checkout fifthTestPass*
 
 ```javaScript
 function fizzbuzz(number){
@@ -158,7 +158,7 @@ function fizzbuzz(number){
 ### **More tests**
 Test with another condition to make it fail
 
-*git checkout 91361e84121c65b6b620c844c2480f7a1c96cab4*
+*git checkout sixthTestFail*
 
 ```javaScript
 it('fizzbuzz with 15', () => {
@@ -169,7 +169,7 @@ it('fizzbuzz with 15', () => {
 #### **Refactor the code to pass the test**
 Lastly we need to check if number is divisible by 3 and 5 at the same time by checking if it can be divided by 15 first
 
-*git checkout 3299418941a1e7738cb865d13d5f2bdba19d21b3*
+*git checkout sixthTestPass*
 
 ```javaScript
 function fizzbuzz(number){
