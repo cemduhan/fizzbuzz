@@ -7,6 +7,9 @@ function fizzbuzz(number){
     if(number <= 0){
         return ['-1']
     }
+    if(typeof(number) != typeof(0)){
+        return ['-1']
+    }
 
     return [number.toString()]
 }
