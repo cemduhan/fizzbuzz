@@ -14,4 +14,8 @@ describe('fizbuzz', () =>{
         expect(fizzbuzz('trial')).toEqual(['-1'])
     });
 
+    it('fizzbuzz with 3', () => {
+        expect(fizzbuzz(3)).toEqual(['1','2','fizz'])
+    });
+
 });
